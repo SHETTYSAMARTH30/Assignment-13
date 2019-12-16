@@ -93,10 +93,10 @@ app.post("/products/create", (req, res) => {
 app.post("/products/update/:id", (req, res) => {
 	Product.updateOne({id: req.params.id}, { product: req.body })
 	.then((updateRes) => {
-		if(updateRes.nModified == 0) throw "Values not updated";
+		
 		res.send({
 			success: 1,
-			message: "Updated successfully!!"
+			message: "Successfully Updated the products!!"
 		});
 	})
 	.catch((err) => {
@@ -113,7 +113,7 @@ app.get("/products/delete/:id", (req, res) => {
 	.then((deleteRes) => {
 		res.send({
 			success: 1,
-			message: "Deleted successfully!!"
+			message: "Successfully Deleted the products!!"
 		})
 	})
 	.catch((err) => {
